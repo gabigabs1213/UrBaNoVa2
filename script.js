@@ -2,141 +2,33 @@
    URBANOVA — Datos
    ========================================================= */
 const productos = [
-  {
-    id: 1,
-    nombre: "Camiseta Urban Black",
-    categoria: "camiseta",
-    precio: 24.99,
-    imagen: "https://images.pexels.com/photos/13995911/pexels-photo-13995911.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-  },
-  {
-    id: 2,
-    nombre: "Camiseta White Essential",
-    categoria: "camiseta",
-    precio: 19.99,
-    imagen: "https://images.pexels.com/photos/7045179/pexels-photo-7045179.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-  },
-  {
-    id: 3,
-    nombre: "Camiseta Street Drop",
-    categoria: "camiseta",
-    precio: 22.99,
-    imagen: "https://images.pexels.com/photos/7045185/pexels-photo-7045185.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-  },
-  {
-    id: 4,
-    nombre: "Pantalón Cargo Verde",
-    categoria: "pantalon",
-    precio: 44.99,
-    imagen: "https://images.pexels.com/photos/28666269/pexels-photo-28666269.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-  },
-  {
-    id: 5,
-    nombre: "Pantalón Street Slim",
-    categoria: "pantalon",
-    precio: 39.99,
-    imagen: "https://images.pexels.com/photos/28666275/pexels-photo-28666275.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-  },
-  {
-    id: 6,
-    nombre: "Pantalón Urban Fit",
-    categoria: "pantalon",
-    precio: 49.99,
-    imagen: "https://images.pexels.com/photos/28902694/pexels-photo-28902694.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-  },
-  {
-    id: 7,
-    nombre: "Sudadera Basic Grey",
-    categoria: "sudadera",
-    precio: 39.99,
-    imagen: "https://images.pexels.com/photos/35240862/pexels-photo-35240862.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-  },
-  {
-    id: 8,
-    nombre: "Sudadera Urban Black",
-    categoria: "sudadera",
-    precio: 44.99,
-    imagen: "https://images.pexels.com/photos/35240866/pexels-photo-35240866.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-  },
-  {
-    id: 9,
-    nombre: "Sudadera Sky Blue",
-    categoria: "sudadera",
-    precio: 42.99,
-    imagen: "https://images.pexels.com/photos/35240860/pexels-photo-35240860.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-  },
-  {
-    id: 10,
-    nombre: "Zapatillas Street Runner",
-    categoria: "zapatillas",
-    precio: 59.99,
-    imagen: "https://images.pexels.com/photos/30755567/pexels-photo-30755567.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-  },
-  {
-    id: 11,
-    nombre: "Zapatillas Skate Low",
-    categoria: "zapatillas",
-    precio: 54.99,
-    imagen: "https://images.pexels.com/photos/34229916/pexels-photo-34229916.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-  },
-  {
-    id: 12,
-    nombre: "Zapatillas Urban Walk",
-    categoria: "zapatillas",
-    precio: 64.99,
-    imagen: "https://images.pexels.com/photos/10399158/pexels-photo-10399158.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-  }
+  { id: 1,  nombre: "Camiseta Urban Black",      categoria: "camiseta",   precio: 24.99, imagen: "https://images.pexels.com/photos/13995911/pexels-photo-13995911.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" },
+  { id: 2,  nombre: "Camiseta White Essential",  categoria: "camiseta",   precio: 19.99, imagen: "https://images.pexels.com/photos/7045179/pexels-photo-7045179.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" },
+  { id: 3,  nombre: "Camiseta Street Drop",      categoria: "camiseta",   precio: 22.99, imagen: "https://images.pexels.com/photos/7045185/pexels-photo-7045185.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" },
+  { id: 4,  nombre: "Pantalón Cargo Verde",      categoria: "pantalon",   precio: 44.99, imagen: "https://images.pexels.com/photos/28666269/pexels-photo-28666269.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" },
+  { id: 5,  nombre: "Pantalón Street Slim",      categoria: "pantalon",   precio: 39.99, imagen: "https://images.pexels.com/photos/28666275/pexels-photo-28666275.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" },
+  { id: 6,  nombre: "Pantalón Urban Fit",        categoria: "pantalon",   precio: 49.99, imagen: "https://images.pexels.com/photos/28902694/pexels-photo-28902694.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" },
+  { id: 7,  nombre: "Sudadera Basic Grey",       categoria: "sudadera",   precio: 39.99, imagen: "https://images.pexels.com/photos/35240862/pexels-photo-35240862.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" },
+  { id: 8,  nombre: "Sudadera Urban Black",      categoria: "sudadera",   precio: 44.99, imagen: "https://images.pexels.com/photos/35240866/pexels-photo-35240866.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" },
+  { id: 9,  nombre: "Sudadera Sky Blue",         categoria: "sudadera",   precio: 42.99, imagen: "https://images.pexels.com/photos/35240860/pexels-photo-35240860.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" },
+  { id: 10, nombre: "Zapatillas Street Runner",  categoria: "zapatillas", precio: 59.99, imagen: "https://images.pexels.com/photos/30755567/pexels-photo-30755567.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" },
+  { id: 11, nombre: "Zapatillas Skate Low",      categoria: "zapatillas", precio: 54.99, imagen: "https://images.pexels.com/photos/34229916/pexels-photo-34229916.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" },
+  { id: 12, nombre: "Zapatillas Urban Walk",     categoria: "zapatillas", precio: 64.99, imagen: "https://images.pexels.com/photos/10399158/pexels-photo-10399158.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" }
 ];
 
 const ofertas = [
-  {
-    id: 101,
-    nombre: "Sudadera Hoodie Pro",
-    precioAntes: 49.99,
-    precioAhora: 34.99,
-    descuento: "-30%",
-    categoria: "sudadera",
-    imagen: "https://images.pexels.com/photos/35240866/pexels-photo-35240866.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-  },
-  {
-    id: 102,
-    nombre: "Pantalón Cargo Black",
-    precioAntes: 59.99,
-    precioAhora: 39.99,
-    descuento: "-33%",
-    categoria: "pantalon",
-    imagen: "https://images.pexels.com/photos/28666271/pexels-photo-28666271.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-  },
-  {
-    id: 103,
-    nombre: "Zapatillas Classic White",
-    precioAntes: 74.99,
-    precioAhora: 49.99,
-    descuento: "-33%",
-    categoria: "zapatillas",
-    imagen: "https://images.pexels.com/photos/30755567/pexels-photo-30755567.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-  },
-  {
-    id: 104,
-    nombre: "Camiseta Logo Pack",
-    precioAntes: 29.99,
-    precioAhora: 19.99,
-    descuento: "-33%",
-    categoria: "camiseta",
-    imagen: "https://images.pexels.com/photos/7045174/pexels-photo-7045174.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-  }
+  { id: 101, nombre: "Sudadera Hoodie Pro",     precioAntes: 49.99, precioAhora: 34.99, descuento: "-30%", categoria: "sudadera",   imagen: "https://images.pexels.com/photos/35240866/pexels-photo-35240866.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" },
+  { id: 102, nombre: "Pantalón Cargo Black",    precioAntes: 59.99, precioAhora: 39.99, descuento: "-33%", categoria: "pantalon",   imagen: "https://images.pexels.com/photos/28666271/pexels-photo-28666271.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" },
+  { id: 103, nombre: "Zapatillas Classic White",precioAntes: 74.99, precioAhora: 49.99, descuento: "-33%", categoria: "zapatillas", imagen: "https://images.pexels.com/photos/30755567/pexels-photo-30755567.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" },
+  { id: 104, nombre: "Camiseta Logo Pack",      precioAntes: 29.99, precioAhora: 19.99, descuento: "-33%", categoria: "camiseta",   imagen: "https://images.pexels.com/photos/7045174/pexels-photo-7045174.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" }
 ];
 
-/* =========================================================
-   Estado global
-   ========================================================= */
+/* Estado */
 let carrito = [];
 let categoriaActiva = "todo";
 let textoBusqueda = "";
 
-/* =========================================================
-   Referencias al DOM
-   ========================================================= */
+/* DOM */
 const productosGrid    = document.getElementById("productos-grid");
 const ofertasGrid      = document.getElementById("ofertas-grid");
 const sinResultados    = document.getElementById("sin-resultados");
@@ -155,105 +47,71 @@ const formConfirmacion = document.getElementById("form-confirmacion");
 const categoriaBtns    = document.querySelectorAll(".categoria-btn");
 const themeBtn         = document.getElementById("theme-btn");
 
-/* =========================================================
-   Render de productos
-   ========================================================= */
+/* Render productos */
 function mostrarProductos() {
   productosGrid.innerHTML = "";
 
-  const productosFiltrados = productos.filter(function(producto) {
-    const coincideCategoria =
-      categoriaActiva === "todo" || producto.categoria === categoriaActiva;
-
-    const coincideBusqueda =
-      producto.nombre.toLowerCase().includes(textoBusqueda.toLowerCase());
-
-    return coincideCategoria && coincideBusqueda;
+  const filtrados = productos.filter(function(p) {
+    const okCat = categoriaActiva === "todo" || p.categoria === categoriaActiva;
+    const okBus = p.nombre.toLowerCase().includes(textoBusqueda.toLowerCase());
+    return okCat && okBus;
   });
 
-  if (productosFiltrados.length === 0) {
-    sinResultados.style.display = "block";
-  } else {
-    sinResultados.style.display = "none";
-  }
+  sinResultados.style.display = filtrados.length === 0 ? "block" : "none";
 
-  productosFiltrados.forEach(function(producto) {
+  filtrados.forEach(function(p) {
     const card = document.createElement("div");
     card.classList.add("producto-card");
-
     card.innerHTML = `
       <div class="producto-img-wrapper">
-        <img src="${producto.imagen}" alt="${producto.nombre}" loading="lazy" />
+        <img src="${p.imagen}" alt="${p.nombre}" loading="lazy" />
       </div>
       <div class="producto-info">
-        <span class="producto-categoria">${producto.categoria}</span>
-        <h3 class="producto-nombre">${producto.nombre}</h3>
-        <p class="producto-precio">${formatearPrecio(producto.precio)}</p>
+        <span class="producto-categoria">${p.categoria}</span>
+        <h3 class="producto-nombre">${p.nombre}</h3>
+        <p class="producto-precio">${formatearPrecio(p.precio)}</p>
       </div>
-      <button class="producto-btn" data-id="${producto.id}">
-        🛒 Añadir al carrito
-      </button>
+      <button class="producto-btn" data-id="${p.id}">🛒 Añadir al carrito</button>
     `;
-
-    card.querySelector(".producto-btn").addEventListener("click", function() {
-      añadirAlCarrito(producto);
-    });
-
+    card.querySelector(".producto-btn").addEventListener("click", function() { añadirAlCarrito(p); });
     productosGrid.appendChild(card);
   });
 }
 
-/* =========================================================
-   Render de ofertas
-   ========================================================= */
+/* Render ofertas */
 function mostrarOfertas() {
   ofertasGrid.innerHTML = "";
 
-  ofertas.forEach(function(oferta) {
+  ofertas.forEach(function(o) {
     const card = document.createElement("div");
     card.classList.add("oferta-card");
-
     card.innerHTML = `
-      <span class="oferta-badge">${oferta.descuento}</span>
+      <span class="oferta-badge">${o.descuento}</span>
       <div class="oferta-img-wrapper">
-        <img src="${oferta.imagen}" alt="${oferta.nombre}" loading="lazy" />
+        <img src="${o.imagen}" alt="${o.nombre}" loading="lazy" />
       </div>
       <div class="oferta-info">
-        <h3 class="oferta-nombre">${oferta.nombre}</h3>
+        <h3 class="oferta-nombre">${o.nombre}</h3>
         <div class="oferta-precios">
-          <span class="precio-antes">${formatearPrecio(oferta.precioAntes)}</span>
-          <span class="precio-ahora">${formatearPrecio(oferta.precioAhora)}</span>
+          <span class="precio-antes">${formatearPrecio(o.precioAntes)}</span>
+          <span class="precio-ahora">${formatearPrecio(o.precioAhora)}</span>
         </div>
       </div>
-      <button class="oferta-btn" data-id="${oferta.id}">
-        🛒 Añadir al carrito
-      </button>
+      <button class="oferta-btn" data-id="${o.id}">🛒 Añadir al carrito</button>
     `;
-
     card.querySelector(".oferta-btn").addEventListener("click", function() {
-      const productoOferta = {
-        id: oferta.id,
-        nombre: oferta.nombre,
-        precio: oferta.precioAhora,
-        imagen: oferta.imagen
-      };
-      añadirAlCarrito(productoOferta);
+      añadirAlCarrito({ id: o.id, nombre: o.nombre, precio: o.precioAhora, imagen: o.imagen });
     });
-
     ofertasGrid.appendChild(card);
   });
 }
 
-/* =========================================================
-   Utilidades
-   ========================================================= */
+/* Precio formateado */
 function formatearPrecio(precio) {
   return precio.toFixed(2).replace(".", ",") + " €";
 }
 
-/* =========================================================
-   Carrito
-   ========================================================= */
+/* Carrito */
 function añadirAlCarrito(producto) {
   carrito.push(producto);
   actualizarCarrito();
@@ -279,34 +137,29 @@ function renderizarCarrito() {
         <span>🛒</span>
         <p>Tu carrito está vacío.</p>
         <p>¡Añade algo de la colección!</p>
-      </div>
-    `;
+      </div>`;
     carritoTotal.textContent = "0,00 €";
     return;
   }
 
   let total = 0;
 
-  carrito.forEach(function(producto, indice) {
-    total += producto.precio;
+  carrito.forEach(function(p, i) {
+    total += p.precio;
 
     const item = document.createElement("div");
     item.classList.add("carrito-item");
-
     item.innerHTML = `
-      <img src="${producto.imagen}" alt="${producto.nombre}" />
+      <img src="${p.imagen}" alt="${p.nombre}" />
       <div class="carrito-item-info">
-        <p class="carrito-item-nombre">${producto.nombre}</p>
-        <p class="carrito-item-precio">${formatearPrecio(producto.precio)}</p>
+        <p class="carrito-item-nombre">${p.nombre}</p>
+        <p class="carrito-item-precio">${formatearPrecio(p.precio)}</p>
       </div>
-      <button class="carrito-item-eliminar" data-indice="${indice}" aria-label="Eliminar">🗑️</button>
+      <button class="carrito-item-eliminar" data-indice="${i}" aria-label="Eliminar">🗑️</button>
     `;
-
     item.querySelector(".carrito-item-eliminar").addEventListener("click", function() {
-      const i = parseInt(this.getAttribute("data-indice"));
-      eliminarDelCarrito(i);
+      eliminarDelCarrito(parseInt(this.getAttribute("data-indice")));
     });
-
     carritoCuerpo.appendChild(item);
   });
 
@@ -315,9 +168,7 @@ function renderizarCarrito() {
 
 function animarBotonCarrito() {
   cartBtn.classList.add("bounce");
-  setTimeout(function() {
-    cartBtn.classList.remove("bounce");
-  }, 400);
+  setTimeout(function() { cartBtn.classList.remove("bounce"); }, 400);
 }
 
 function abrirCarrito() {
@@ -333,27 +184,16 @@ function cerrarCarrito() {
   document.body.style.overflow = "";
 }
 
-/* =========================================================
-   Filtros y búsqueda
-   ========================================================= */
+/* Filtros */
 function filtrarCategoria(categoria) {
   categoriaActiva = categoria;
-
-  categoriaBtns.forEach(function(btn) {
-    btn.classList.remove("activo");
-  });
-
+  categoriaBtns.forEach(function(btn) { btn.classList.remove("activo"); });
   const btnActivo = document.querySelector(`[data-categoria="${categoria}"]`);
-  if (btnActivo) {
-    btnActivo.classList.add("activo");
-  }
-
+  if (btnActivo) btnActivo.classList.add("activo");
   mostrarProductos();
 }
 
-/* =========================================================
-   Formulario
-   ========================================================= */
+/* Formulario */
 function enviarFormulario(evento) {
   evento.preventDefault();
 
@@ -369,17 +209,11 @@ function enviarFormulario(evento) {
 
   formConfirmacion.style.color = "#2a9d5c";
   formConfirmacion.textContent = `✅ ¡Gracias, ${nombre}! Tu mensaje ha sido enviado.`;
-
   contactoForm.reset();
-
-  setTimeout(function() {
-    formConfirmacion.textContent = "";
-  }, 4000);
+  setTimeout(function() { formConfirmacion.textContent = ""; }, 4000);
 }
 
-/* =========================================================
-   Menú móvil
-   ========================================================= */
+/* Menú móvil */
 function toggleMenu() {
   hamburger.classList.toggle("activo");
   navMenu.classList.toggle("abierto");
@@ -391,14 +225,17 @@ function cerrarMenuMovil() {
 }
 
 /* =========================================================
-   🌙 Modo oscuro
+   🌙 MODO OSCURO
+   =========================================================
+   Nota: ahora NO se cambia el textContent del botón,
+   porque el icono son dos SVG que se muestran/ocultan
+   automáticamente mediante CSS (body.dark).
    ========================================================= */
 function aplicarTema(tema) {
   const esOscuro = tema === "dark";
 
   document.body.classList.toggle("dark", esOscuro);
 
-  themeBtn.textContent = esOscuro ? "☀️" : "🌙";
   themeBtn.setAttribute(
     "aria-label",
     esOscuro ? "Activar modo claro" : "Activar modo oscuro"
@@ -421,13 +258,10 @@ function iniciarTema() {
 
 themeBtn.addEventListener("click", function () {
   const temaActual = document.body.classList.contains("dark") ? "dark" : "light";
-  const nuevoTema = temaActual === "dark" ? "light" : "dark";
-  aplicarTema(nuevoTema);
+  aplicarTema(temaActual === "dark" ? "light" : "dark");
 });
 
-/* =========================================================
-   Eventos
-   ========================================================= */
+/* Eventos */
 cartBtn.addEventListener("click", abrirCarrito);
 carritoCerrar.addEventListener("click", cerrarCarrito);
 carritoOverlay.addEventListener("click", cerrarCarrito);
@@ -451,13 +285,11 @@ buscador.addEventListener("input", function() {
 
 categoriaBtns.forEach(function(btn) {
   btn.addEventListener("click", function() {
-    const categoria = this.getAttribute("data-categoria");
-    filtrarCategoria(categoria);
+    filtrarCategoria(this.getAttribute("data-categoria"));
   });
 });
 
 contactoForm.addEventListener("submit", enviarFormulario);
-
 hamburger.addEventListener("click", toggleMenu);
 
 document.querySelectorAll(".nav-link").forEach(function(enlace) {
@@ -465,14 +297,10 @@ document.querySelectorAll(".nav-link").forEach(function(enlace) {
 });
 
 document.addEventListener("keydown", function(evento) {
-  if (evento.key === "Escape") {
-    cerrarCarrito();
-  }
+  if (evento.key === "Escape") cerrarCarrito();
 });
 
-/* =========================================================
-   Inicialización
-   ========================================================= */
+/* Inicialización */
 iniciarTema();
 mostrarProductos();
 mostrarOfertas();
