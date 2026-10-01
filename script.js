@@ -1,3 +1,6 @@
+/* =========================================================
+   URBANOVA — Datos
+   ========================================================= */
 const productos = [
   {
     id: 1,
@@ -85,8 +88,6 @@ const productos = [
   }
 ];
 
-
-
 const ofertas = [
   {
     id: 101,
@@ -126,21 +127,16 @@ const ofertas = [
   }
 ];
 
-
-
-
-// Carrito: lista de productos añadidos
+/* =========================================================
+   Estado global
+   ========================================================= */
 let carrito = [];
-
-// Categoría activa: empieza en "todo"
 let categoriaActiva = "todo";
-
-// Texto de búsqueda actual
 let textoBusqueda = "";
 
-
-
-
+/* =========================================================
+   Referencias al DOM
+   ========================================================= */
 const productosGrid    = document.getElementById("productos-grid");
 const ofertasGrid      = document.getElementById("ofertas-grid");
 const sinResultados    = document.getElementById("sin-resultados");
@@ -149,7 +145,6 @@ const cartBtn          = document.getElementById("cart-btn");
 const cartCount        = document.getElementById("cart-count");
 const carritoModal     = document.getElementById("carrito-modal");
 const carritoOverlay   = document.getElementById("carrito-overlay");
-const carritoBtn       = document.getElementById("cart-btn");
 const carritoTotal     = document.getElementById("carrito-total");
 const carritoCuerpo    = document.getElementById("carrito-cuerpo");
 const carritoCerrar    = document.getElementById("carrito-cerrar");
@@ -158,35 +153,30 @@ const navMenu          = document.getElementById("nav-menu");
 const contactoForm     = document.getElementById("contacto-form");
 const formConfirmacion = document.getElementById("form-confirmacion");
 const categoriaBtns    = document.querySelectorAll(".categoria-btn");
+const themeBtn         = document.getElementById("theme-btn");
 
-
-
-
+/* =========================================================
+   Render de productos
+   ========================================================= */
 function mostrarProductos() {
-  // Vaciar la cuadrícula antes de volver a dibujar
   productosGrid.innerHTML = "";
 
-  // Filtrar por categoría y por texto de búsqueda
   const productosFiltrados = productos.filter(function(producto) {
-    // Comprobar si coincide con la categoría activa
     const coincideCategoria =
       categoriaActiva === "todo" || producto.categoria === categoriaActiva;
 
-    // Comprobar si el nombre contiene el texto buscado (sin distinguir mayúsculas)
     const coincideBusqueda =
       producto.nombre.toLowerCase().includes(textoBusqueda.toLowerCase());
 
     return coincideCategoria && coincideBusqueda;
   });
 
-  // Si no hay productos que mostrar
   if (productosFiltrados.length === 0) {
     sinResultados.style.display = "block";
   } else {
     sinResultados.style.display = "none";
   }
 
-  // Crear una tarjeta por cada producto filtrado
   productosFiltrados.forEach(function(producto) {
     const card = document.createElement("div");
     card.classList.add("producto-card");
@@ -205,7 +195,6 @@ function mostrarProductos() {
       </button>
     `;
 
-    // Añadir evento al botón de esta tarjeta
     card.querySelector(".producto-btn").addEventListener("click", function() {
       añadirAlCarrito(producto);
     });
@@ -214,8 +203,9 @@ function mostrarProductos() {
   });
 }
 
-
-
+/* =========================================================
+   Render de ofertas
+   ========================================================= */
 function mostrarOfertas() {
   ofertasGrid.innerHTML = "";
 
@@ -240,7 +230,6 @@ function mostrarOfertas() {
       </button>
     `;
 
-    // Crear objeto de producto a partir de la oferta para añadir al carrito
     card.querySelector(".oferta-btn").addEventListener("click", function() {
       const productoOferta = {
         id: oferta.id,
@@ -255,47 +244,35 @@ function mostrarOfertas() {
   });
 }
 
-
-
-
+/* =========================================================
+   Utilidades
+   ========================================================= */
 function formatearPrecio(precio) {
-  // toFixed(2) convierte el número a texto con 2 decimales
   return precio.toFixed(2).replace(".", ",") + " €";
 }
 
-
-
-
+/* =========================================================
+   Carrito
+   ========================================================= */
 function añadirAlCarrito(producto) {
   carrito.push(producto);
   actualizarCarrito();
   animarBotonCarrito();
 }
 
-
-
-
 function eliminarDelCarrito(indice) {
-  // splice(indice, 1) elimina 1 elemento en esa posición
   carrito.splice(indice, 1);
   actualizarCarrito();
   renderizarCarrito();
 }
 
-
-
 function actualizarCarrito() {
-  // Mostrar cuántos productos hay en el carrito
   cartCount.textContent = carrito.length;
 }
-
-
-
 
 function renderizarCarrito() {
   carritoCuerpo.innerHTML = "";
 
-  // Si el carrito está vacío, mostrar mensaje
   if (carrito.length === 0) {
     carritoCuerpo.innerHTML = `
       <div class="carrito-vacio">
@@ -307,7 +284,6 @@ function renderizarCarrito() {
     carritoTotal.textContent = "0,00 €";
     return;
   }
-
 
   let total = 0;
 
@@ -326,7 +302,6 @@ function renderizarCarrito() {
       <button class="carrito-item-eliminar" data-indice="${indice}" aria-label="Eliminar">🗑️</button>
     `;
 
-    // Evento para eliminar este producto
     item.querySelector(".carrito-item-eliminar").addEventListener("click", function() {
       const i = parseInt(this.getAttribute("data-indice"));
       eliminarDelCarrito(i);
@@ -335,47 +310,39 @@ function renderizarCarrito() {
     carritoCuerpo.appendChild(item);
   });
 
-  // Mostrar el total formateado
   carritoTotal.textContent = formatearPrecio(total);
 }
 
-
-
 function animarBotonCarrito() {
   cartBtn.classList.add("bounce");
-  // Quitar la clase después de la animación
   setTimeout(function() {
     cartBtn.classList.remove("bounce");
   }, 400);
 }
 
-
-
 function abrirCarrito() {
   renderizarCarrito();
   carritoModal.classList.add("visible");
   carritoOverlay.classList.add("visible");
-  document.body.style.overflow = "hidden"; // Bloquear el scroll de la página
+  document.body.style.overflow = "hidden";
 }
-
 
 function cerrarCarrito() {
   carritoModal.classList.remove("visible");
   carritoOverlay.classList.remove("visible");
-  document.body.style.overflow = ""; // Restaurar el scroll
+  document.body.style.overflow = "";
 }
 
-
-
+/* =========================================================
+   Filtros y búsqueda
+   ========================================================= */
 function filtrarCategoria(categoria) {
   categoriaActiva = categoria;
 
-  // Quitar clase "activo" de todos los botones
   categoriaBtns.forEach(function(btn) {
     btn.classList.remove("activo");
   });
 
-  // Poner clase "activo" solo en el botón pulsado
   const btnActivo = document.querySelector(`[data-categoria="${categoria}"]`);
   if (btnActivo) {
     btnActivo.classList.add("activo");
@@ -384,63 +351,87 @@ function filtrarCategoria(categoria) {
   mostrarProductos();
 }
 
-
-
+/* =========================================================
+   Formulario
+   ========================================================= */
 function enviarFormulario(evento) {
-  // Evitar que la página se recargue
   evento.preventDefault();
 
   const nombre  = document.getElementById("nombre").value.trim();
   const email   = document.getElementById("email").value.trim();
   const mensaje = document.getElementById("mensaje").value.trim();
 
-  // Comprobar que los campos no estén vacíos
   if (nombre === "" || email === "" || mensaje === "") {
     formConfirmacion.style.color = "#e63946";
     formConfirmacion.textContent = "⚠️ Por favor, rellena todos los campos.";
     return;
   }
 
-  // Mostrar mensaje de éxito
   formConfirmacion.style.color = "#2a9d5c";
   formConfirmacion.textContent = `✅ ¡Gracias, ${nombre}! Tu mensaje ha sido enviado.`;
 
-  // Limpiar el formulario
   contactoForm.reset();
 
-  // Ocultar el mensaje después de 4 segundos
   setTimeout(function() {
     formConfirmacion.textContent = "";
   }, 4000);
 }
 
-
-
-
+/* =========================================================
+   Menú móvil
+   ========================================================= */
 function toggleMenu() {
   hamburger.classList.toggle("activo");
   navMenu.classList.toggle("abierto");
 }
-
-
 
 function cerrarMenuMovil() {
   hamburger.classList.remove("activo");
   navMenu.classList.remove("abierto");
 }
 
+/* =========================================================
+   🌙 Modo oscuro
+   ========================================================= */
+function aplicarTema(tema) {
+  const esOscuro = tema === "dark";
 
+  document.body.classList.toggle("dark", esOscuro);
 
-// Botón del carrito → abrir carrito
+  themeBtn.textContent = esOscuro ? "☀️" : "🌙";
+  themeBtn.setAttribute(
+    "aria-label",
+    esOscuro ? "Activar modo claro" : "Activar modo oscuro"
+  );
+  themeBtn.setAttribute("aria-pressed", esOscuro);
+
+  localStorage.setItem("tema", tema);
+}
+
+function iniciarTema() {
+  const temaGuardado = localStorage.getItem("tema");
+  const prefiereOscuro = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  if (temaGuardado) {
+    aplicarTema(temaGuardado);
+  } else {
+    aplicarTema(prefiereOscuro ? "dark" : "light");
+  }
+}
+
+themeBtn.addEventListener("click", function () {
+  const temaActual = document.body.classList.contains("dark") ? "dark" : "light";
+  const nuevoTema = temaActual === "dark" ? "light" : "dark";
+  aplicarTema(nuevoTema);
+});
+
+/* =========================================================
+   Eventos
+   ========================================================= */
 cartBtn.addEventListener("click", abrirCarrito);
-
-// Botón cerrar carrito
 carritoCerrar.addEventListener("click", cerrarCarrito);
-
-// Fondo oscuro → cerrar carrito
 carritoOverlay.addEventListener("click", cerrarCarrito);
 
-// Botón "Finalizar compra"
 document.getElementById("btn-comprar").addEventListener("click", function() {
   if (carrito.length === 0) {
     alert("Tu carrito está vacío. ¡Añade algún producto primero!");
@@ -453,13 +444,11 @@ document.getElementById("btn-comprar").addEventListener("click", function() {
   alert("✅ ¡Gracias por tu compra! Te enviaremos un email de confirmación.");
 });
 
-// Buscador → filtrar al escribir
 buscador.addEventListener("input", function() {
   textoBusqueda = this.value;
   mostrarProductos();
 });
 
-// Botones de categoría → filtrar
 categoriaBtns.forEach(function(btn) {
   btn.addEventListener("click", function() {
     const categoria = this.getAttribute("data-categoria");
@@ -467,24 +456,23 @@ categoriaBtns.forEach(function(btn) {
   });
 });
 
-// Formulario de contacto → enviar
 contactoForm.addEventListener("submit", enviarFormulario);
 
-// Hamburguesa → abrir/cerrar menú móvil
 hamburger.addEventListener("click", toggleMenu);
 
-// Cerrar menú al pulsar un enlace de navegación
 document.querySelectorAll(".nav-link").forEach(function(enlace) {
   enlace.addEventListener("click", cerrarMenuMovil);
 });
 
-// Tecla Escape → cerrar carrito
 document.addEventListener("keydown", function(evento) {
   if (evento.key === "Escape") {
     cerrarCarrito();
   }
 });
 
-
+/* =========================================================
+   Inicialización
+   ========================================================= */
+iniciarTema();
 mostrarProductos();
 mostrarOfertas();
