@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>URBANOVA — Viste a tu manera</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="nav-container">
+
+      <a href="#inicio" class="logo">URBANOVA</a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="#inicio" class="nav-link">Inicio</a></li>
+          <li><a href="#productos" class="nav-link">Ropa</a></li>
+          <li><a href="#ofertas" class="nav-link">Ofertas</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+
+        <!-- 🌙 Botón modo oscuro con SVG -->
+        <button class="theme-btn" id="theme-btn" aria-label="Activar modo oscuro" aria-pressed="false">
+          <!-- Icono luna (visible por defecto) -->
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <!-- Icono sol (oculto por defecto) -->
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+
+        <!-- ◐ Botón alto / bajo contraste -->
+        <button class="contrast-btn" id="contrast-btn" aria-label="Activar alto contraste" aria-pressed="false" title="Alto / bajo contraste">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 3v18" />
+            <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/>
+          </svg>
+        </button>
+
+        <button class="cart-btn" id="cart-btn" aria-label="Abrir carrito">
+          🛒 <span class="cart-count" id="cart-count">0</span>
+        </button>
+
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-overlay"></div>
+    <img
+      src="https://images.pexels.com/photos/6069952/pexels-photo-6069952.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+      alt="Moda urbana"
+      class="hero-img"
+    />
+    <div class="hero-content">
+      <h1 class="hero-title">Viste a tu manera</h1>
+      <p class="hero-text">Ropa urbana y moderna para expresar quién eres. Nueva colección disponible ahora.</p>
+      <a href="#productos" class="btn btn-primary">Ver colección</a>
+    </div>
+  </section>
+
+  <section class="categorias" id="categorias">
+    <div class="container">
+      <h2 class="section-title">Categorías</h2>
+      <div class="categorias-grid">
+        <button class="categoria-btn activo" data-categoria="todo">🛍️ Todo</button>
+        <button class="categoria-btn" data-categoria="camiseta">👕 Camisetas</button>
+        <button class="categoria-btn" data-categoria="pantalon">👖 Pantalones</button>
+        <button class="categoria-btn" data-categoria="sudadera">🧥 Sudaderas</button>
+        <button class="categoria-btn" data-categoria="zapatillas">👟 Zapatillas</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="buscador-seccion">
+    <div class="container">
+      <div class="buscador-wrapper">
+        <span class="buscador-icono">🔍</span>
+        <input
+          type="text"
+          id="buscador"
+          class="buscador-input"
+          placeholder="Buscar productos..."
+          aria-label="Buscar productos"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="productos-seccion" id="productos">
+    <div class="container">
+      <h2 class="section-title">Nuestra Colección</h2>
+      <div class="productos-grid" id="productos-grid"></div>
+      <p class="sin-resultados" id="sin-resultados">No se encontraron productos 😕</p>
+    </div>
+  </section>
+
+  <section class="ofertas-seccion" id="ofertas">
+    <div class="container">
+      <h2 class="section-title">🔥 Ofertas Especiales</h2>
+      <p class="section-subtitle">¡No te quedes sin ellos!</p>
+      <div class="ofertas-grid" id="ofertas-grid"></div>
+    </div>
+  </section>
+
+  <section class="contacto-seccion" id="contacto">
+    <div class="container">
+      <h2 class="section-title">Registrate par mas ofertas:</h2>
+      <div class="contacto-wrapper">
+
+        <div class="contacto-info">
+          <h3>¿Hablamos?</h3>
+          <p>Estamos aquí para ayudarte con cualquier duda.</p>
+          <ul class="contacto-lista">
+            <li>📧 <a href="mailto:hola@urbanova.es">hola@urbanova.es</a></li>
+            <li>📞 <a href="tel:+34900123456">+34 900 123 456</a></li>
+            <li>📍 Calle Gran Vía 42, Madrid</li>
+          </ul>
+          <div class="horario">
+            <strong>Horario de atención:</strong><br />
+            Lunes a Viernes: 9:00 – 18:00<br />
+            Sábados: 10:00 – 14:00
+          </div>
+        </div>
+
+        <form class="contacto-form" id="contacto-form" novalidate>
+          <div class="form-grupo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+          </div>
+          <div class="form-grupo">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+          </div>
+          <div class="form-grupo">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Enviar mensaje</button>
+          <p class="form-confirmacion" id="form-confirmacion"></p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-contenido">
+        <span class="logo">URBANOVA</span>
+        <p>© 2025 URBANOVA. Todos los derechos reservados.</p>
+        <p class="footer-small">Hecho con ❤️ para los amantes del estilo urbano.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="carrito-overlay" id="carrito-overlay"></div>
+  <div class="carrito-modal" id="carrito-modal" aria-modal="true" role="dialog">
+    <div class="carrito-header">
+      <h2>🛒 Mi Carrito</h2>
+      <button class="carrito-cerrar" id="carrito-cerrar" aria-label="Cerrar carrito">✕</button>
+    </div>
+    <div class="carrito-cuerpo" id="carrito-cuerpo"></div>
+    <div class="carrito-footer">
+      <div class="carrito-total">
+        <span>Total:</span>
+        <strong id="carrito-total">0,00 €</strong>
+      </div>
+      <button class="btn btn-primary btn-full" id="btn-comprar">Finalizar compra</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
